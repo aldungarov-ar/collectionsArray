@@ -6,12 +6,18 @@ public class TwoDimensionalArray {
 
     public static char[][] getTwoDimensionalArray(int size) {
 
-        //TODO: Написать метод, который создаст двумерный массив char заданного размера.
-        // массив должен содержать символ SYMBOL по диагоналям, пример для size = 3
-        // [X,  , X]
-        // [ , X,  ]
-        // [X,  , X]
+        char[][] array = new char[size][size];
 
-        return new char[0][0];
+        for (int i = 0; i < size; i++) {
+            array[i][i] = SYMBOL;
+            array[i][array[i].length - i - 1] = SYMBOL;
+            for (int j = 0; j < size; j++) {
+                if (array[i][j] != SYMBOL) {
+                    array[i][j] = ' ';
+                }
+            }
+        }
+
+        return array;
     }
 }

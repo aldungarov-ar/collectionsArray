@@ -6,5 +6,10 @@ public class Main {
     // значений для проверки и отладки
     public static void main(String[] args) {
         String line = "Каждый охотник желает знать, где сидит фазан";
+        String[] split = line.split(" ");
+        ReverseArray.reverse(split);
+        for (String word : split) {
+            System.out.print(word + " ");
+        }
     }
 }
